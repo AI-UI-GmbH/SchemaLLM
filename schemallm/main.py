@@ -257,10 +257,15 @@ class SchemaLLM:
         max_items = schema.get("max_items", self.max_array_length)
         items = schema["items"]
         for i in range(max_items):
-            if i < len(items):
-                subschema = items[i]
+            if isinstance(items, dict):
+                subschema = items
+            elif isinstance(items, list):
+                if i < len(items):
+                    subschema = items[i]
+                else:
+                    subschema = items[0]
             else:
-                subschema = items[0]
+                raise Exception(f"Unknown item schema: {items}")
 
             # check reference
             if "$ref" in subschema:
