@@ -52,6 +52,9 @@ print(output)
 # {'name': 'Alice', 'age': 21, 'employer': {'name': 'LMQL Inc', 'location': 'Zurich'}, 'job': 'engineer', 'family_members': ['husband', 'son']}
 ```
 
+## other examples:
+- [calling function with arguments from local llm](https://github.com/AI-UI-GmbH/SchemaLLM/blob/main/examples/function_calling_with_arguments.ipynb)
+
 # Install
 
 `pip install git+https://github.com/pfan21/schemallm`
